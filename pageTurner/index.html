@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Test</title>
+        <title>TurnStyle</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
@@ -41,8 +41,10 @@
 
 
         </script>
+        <script src="clarinets.js"/></script>
     </head>
     <body onload="initiatePageTurner();">
+        <center>
         <a href="" onclick="$('#page1').hide();$('#page2').fadeIn('slow');return false;" >Turn to page 2</a> / <a href="" onclick="$('#page2').hide();$('#page3').fadeIn('slow');return false;" >Turn to page 3</a> / <a href="" onclick="$('#page3').hide();$('#page1').fadeIn('slow');return false;" >Turn to page 1</a>
         <div>
             <div id="page1">
@@ -55,6 +57,8 @@
                 <img src="P3.png">
             </div>
         </div>
+        <img src="logo.png"/>
+        </center>
     </body>
 
 
