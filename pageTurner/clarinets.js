@@ -40,9 +40,9 @@ function() {
 console.error("blah");
 });
 
-var seqs = [["g3", "b3", "d4", "g4", "b4", "d4", "g4", "b4"], 
-			"ab3, f3, b3, c4, d4, b3,c4,d4,ab3,f3,b3,c4,d4,b3,c4,d4,b3,c4,d4".split(","), 
-			"g4, b4, d5, f5, d5, b4, d5, b4, d4, f4, e4, d4".split(",")];
+var seqs = [["g4", "b4"], //["g3", "b3", "d4", "g4", "b4", "d4", "g4", "b4"]
+			"c4,d4".split(","), //"ab3, f3, b3, c4, d4, b3,c4,d4,ab3,f3,b3,c4,d4,b3,c4,d4,b3,c4,d4".split(","),
+			"e4, d4".split(",")]; //"g4, b4, d5, f5, d5, b4, d5, b4, d4, f4, e4, d4".split(",")
 
 var next_seq = seqs[0];
 var placeInSequence = 0;
@@ -122,13 +122,12 @@ if(note == next_seq[placeInSequence].trim()) {
 }	
 
 function convertFreq(freq) {
-var error = 100;
+var error = 100000;
 var closestNote = null;
 for(var i=0; i<notes.length; i++) {
-	if(freq-notes[i][0]<error) {
-		error = freq-notes[i][0];
-		closetNote = notes[i][1];
-
+	if(Math.abs(freq-notes[i][0])<error) {
+		error = Math.abs(freq-notes[i][0]);
+		closestNote = notes[i][1];
 	}
 }
 return closestNote;
