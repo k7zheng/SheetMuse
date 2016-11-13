@@ -33,7 +33,7 @@ var prominentFreq = indexToHertz(biggest);
 
 handleFreq(prominentFreq);
 
-}, 100);
+}, 1000); //10 times a second
 
 },
 function() {
@@ -48,7 +48,7 @@ var next_seq = seqs[0];
 var placeInSequence = 0;
 var freq;
 var prevFreq;
-currPage = 1
+currPage = 0
 // var noteRanges = [[64.1018,66.7182,"c2"],
 // 				  [71.9516,74.8884,"d2"],
 // 				  [80.7618,84.0582,"e2"],
