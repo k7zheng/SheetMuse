@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+        <script type="text/javascript">
+            
+            function turnToPage(x) {
+                console.log(x);
+                if (x=="1") {
+                    $('#page3').hide();$('#page1').fadeIn('slow');return false;
+                } else if (x=="2") {
+                    $('#page1').hide();$('#page2').fadeIn('slow');return false;
+                    
+                } else if (x=="3") {
+                    $('#page2').hide();$('#page3').fadeIn('slow');return false;
+                     
+                }
+            }
+
+            function initiatePageTurner() {
+                var dummyData = ["c4", "c5", "b7", "b10", "b4", "d4", "g4", "b4", "a4", "d9", "e9", "d4", "b3", "c4", "d4"];
+                console.log(dummyData);
+                /*
+                setTimeout( function(){
+                    $('#page1').hide();$('#page2').fadeIn('slow');return false;
+                }, 5000);
+
+                setTimeout( function(){
+                    $('#page2').hide();$('#page3').fadeIn('slow');return false;
+                }, 10000);
+
+                setTimeout( function(){
+                    $('#page3').hide();$('#page1').fadeIn('slow');return false;
+                }, 15000);
+                */
+
+            }
+
+
+        </script>
+    </head>
+    <body onload="initiatePageTurner();">
+        <a href="" onclick="$('#page1').hide();$('#page2').fadeIn('slow');return false;" >Turn to page 2</a> / <a href="" onclick="$('#page2').hide();$('#page3').fadeIn('slow');return false;" >Turn to page 3</a> / <a href="" onclick="$('#page3').hide();$('#page1').fadeIn('slow');return false;" >Turn to page 1</a>
+        <div>
+            <div id="page1">
+                <img src="P1.png">
+            </div>
+            <div id="page2" style="display: none;">
+                <img src="P2.png">
+            </div>
+            <div id="page3" style="display: none;">
+                <img src="P3.png">
+            </div>
+        </div>
+    </body>
+
+
+</html>

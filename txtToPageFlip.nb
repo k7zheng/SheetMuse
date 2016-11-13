@@ -1,0 +1,36 @@
+allNotes = []
+noteBuffer = []
+currentPage = [0] #page number iterator
+blankBuffer=[]
+
+keyPairs[{notes,boolean}]
+
+keyPairs=[{a b c d, 0},{a d e f,0}]
+keyPairs=[{end1,0},{end2,0},{end3,0},{end4,0}]
+currentKeyPair=[keyPairs{1,1}]
+
+#n=note index iterator (line number from text file)
+
+while{currentPage<=Length(keyPairs)]} #while we are on pages 0-total, do this, otherwise stop
+  if{Length(noteBuffer)=4} #while the list is at 4
+    newestNote=Import["textfile.txt",{"Lines",Length[allNotes]]
+    noteBuffer=Append[noteBuffer,newestNote]
+    noteBuffer=Delete[noteBuffer,0]
+    allNotes=Append[allNotes,newestNote]
+
+      If(noteBuffer=currentKeyPair) #if key pair matches noteBuffer
+        currentPage=currentPage+1 #turn page
+        currentKeyPair=[keyPairs{currentPage,1}] #set the new keypair
+        noteBuffer=blankBuffer[] #clear buffer
+          If(currentPage>Length(keyPairs)) #if page number has exceeded our number of pages
+            Abort[]
+          else
+            *nothing
+      else
+        *nothing
+
+
+  else #while list is still populating and is less than 4
+    newestNote=Import["textfile.txt",{"Lines",Length[allNotes]]
+    noteBuffer=Append[noteBuffer,newestNote]
+    allNotes=noteBuffer
